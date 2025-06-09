@@ -12,9 +12,9 @@ print(data.info())
 data=data.drop(columns=['CustomerID'])
 data=data.dropna()
 
-data=pd.get_dummies(data,drop_first=True)
+data=pd.get_dummies(data,drop_first=True) #convert categorical variables into numbers
 
-X = data.drop('Churn', axis=1)
+X = data.drop('Churn', axis=1) #drop the rows that contain missing values
 y = data['Churn']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
